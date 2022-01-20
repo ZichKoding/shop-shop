@@ -30,31 +30,6 @@ function Success() {
         saveOrder();
     }, [addOrder]);
 
-    // const [addOrder] = useMutation(ADD_ORDER);
-
-    // useEffect(() => {
-    //     async function saveOrder() {
-    //         const cart = await idbPromise('cart', 'get');
-    //         const products = cart.map(item => item._id);
-
-    //         if (products.length) {
-    //             const { data } = await addOrder({ variables: { products } });
-    //             const productData = data.addOrder.products;
-
-    //             productData.forEach((item) => {
-    //                 idbPromise('cart', 'delete', item);
-    //             });
-    //         }
-            
-    //         setTimeout(() => {
-    //             console.log('Redirecting.....');
-    //             window.location.assign('/');
-    //         }, 3000);
-    //     };
-
-    //     // saveOrder();
-    // }, [addOrder]);
-
     return (
         <div>
             <Jumbotron>
