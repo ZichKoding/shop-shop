@@ -1,13 +1,17 @@
 import React from "react";
-import { useStoreContext } from '../../utils/GlobalState';
 import {
     REMOVE_FROM_CART,
     UPDATE_CART_QUANTITY
 } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
+import { useSelector, useDispatch } from "react-redux";
+
 
 const CartItem = ({ item }) => {
-    const [, dispatch] = useStoreContext();
+    // useSelector will read the state for this component and compare with GlobalState
+    const state = useSelector(state => state);
+    // useDispatch will be used for detecting change and overwriting the data in GlobalState if need be
+    const dispatch = useDispatch();
     
     const removeFromCart = item => {
         dispatch({
