@@ -4,12 +4,15 @@ import { useQuery } from '@apollo/client';
 import ProductItem from '../ProductItem';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import spinner from '../../assets/spinner.gif';
-import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
+import { useSelector, useDispatch } from 'react-redux';
 
 function ProductList() {
-  const [state, dispatch] = useStoreContext();
+  // useSelector will read the state for this component and compare with GlobalState
+  const state = useSelector(state => state);
+  // useDispatch will be used for detecting change and overwriting the data in GlobalState if need be
+  const dispatch = useDispatch();
 
   const { currentCategory } = state;
   
