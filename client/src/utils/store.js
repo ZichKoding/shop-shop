@@ -1,8 +1,4 @@
-import { configureStore } from '@redux/toolkit';
-import ecommReducer from './newReducers/ecommSlice';
+import { createStore } from 'redux';
+import reducer from './reducers';
 
-export default configureStore({
-    reducer: {
-        updateProducts: UPDATE_PRODUCTS
-    }
-});
+export default createStore(reducer);
