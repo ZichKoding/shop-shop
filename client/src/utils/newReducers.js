@@ -11,7 +11,11 @@ export const ecommSlice = createSlice({
     },
     reducers: {
         UPDATE_PRODUCTS: (state) => {
-            
-        }
+            products.push(state);
+        },
     }
 });
+
+export const { UPDATE_PRODUCTS } = ecommSlice.actions;
+
+export default ecommSlice.reducer;
